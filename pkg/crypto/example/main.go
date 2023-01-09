@@ -4,7 +4,7 @@ import (
 	"fmt"
 
 	"go-config-encryption/pkg/crypto/aesCbc256"
-	"go-config-encryption/pkg/crypto/base64"
+	"go-config-encryption/pkg/crypto/hash"
 )
 
 func main() {
@@ -13,12 +13,12 @@ func main() {
 
 	encrypted, _ := aesCbc256.Encrypt(plainText, secretKey, "")
 	decrypted, _ := aesCbc256.Decrypt(encrypted, secretKey, "")
-	md5b64 := base64.GenerateMD5WithBase64Encoding(secretKey)
+	sha256 := hash.HashingSHA256(secretKey)
 
 	fmt.Println("=== AES-256-CBC Encryption ===")
 	fmt.Println("Encrypted Value: ", encrypted)
 	fmt.Println("Decrypted Value: ", decrypted)
 
-	fmt.Println("=== Base 64 Encoding ===")
-	fmt.Println("MD5 Value: ", md5b64)
+	fmt.Println("=== Hashing ===")
+	fmt.Println("Hash SHA256 Value: ", sha256)
 }

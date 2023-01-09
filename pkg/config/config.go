@@ -7,7 +7,7 @@ import (
 	"github.com/kelseyhightower/envconfig"
 
 	"go-config-encryption/pkg/crypto/aesCbc256"
-	"go-config-encryption/pkg/crypto/base64"
+	"go-config-encryption/pkg/crypto/hash"
 	"go-config-encryption/pkg/regex"
 )
 
@@ -38,9 +38,9 @@ func (s *EncryptedValue) Decode(cfgValue string) error {
 		encrypted = regex.ExtractEncryptedValue(cfgValue)
 	)
 
-	key := base64.GenerateMD5WithBase64Encoding(secretKey)
+	key := hash.HashingSHA256(secretKey)
 
-	decrypted, err := aesCbc256.Decrypt(encrypted, key, "")
+	decrypted, err := aesCbc256.Decrypt(encrypted, key[32:], "")
 	if err != nil {
 		return err
 	}
