@@ -34,7 +34,7 @@ func (s *EncryptedValue) Decode(cfgValue string) error {
 	}
 
 	var (
-		secretKey = regex.ExtractEncryptedValue(os.Getenv("SECRETKEY"))
+		secretKey = os.Getenv("SECRETKEY")
 		encrypted = regex.ExtractEncryptedValue(cfgValue)
 	)
 
