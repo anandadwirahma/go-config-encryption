@@ -6,7 +6,7 @@
 SECRETKEY="253AC3AB47D6422622A4864B3EB53"
 ```
 2. Hash the secret key, then take the last 32 digits. Use it as your secret key to encrypt your config later on.<br />
-![img.png](./hash-256.png)
+![hash-256.png](./hash-256.png)
 
    <br />The last 32 digits are **67d81e2c5717548a4ee1bd1e81395746**<br /> 
    Use it to encrypt your signature.<br />
@@ -39,7 +39,7 @@ SECRETKEY="253AC3AB47D6422622A4864B3EB53"
 2. Encrypt your config value using the secret key in **_Prerequisites point 2_**, then put it into .env file.<br />
    _You can use this tool to encrypt your value: [AES-256-CBC Encryptor](https://encode-decode.com/aes-256-cbc-encrypt-online/)_ <br />
 
-![img_1.png](./ase-256-cbc.png)
+![aes-256-cbc.png](./aes-256-cbc.png)
    <br />Encrypted config example:
 ```sh
 SECRETKEY="253AC3AB47D6422622A4864B3EB53"
