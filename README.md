@@ -69,3 +69,5 @@ DATABASE_HOST="localhost"
 DATABASE_PORT=8080
 ```
 
+### Article
+https://anandadwirahma.medium.com/the-easy-way-to-encrypt-credential-config-value-in-golang-ef071f2b33ac
