@@ -6,7 +6,7 @@
 SECRETKEY="253AC3AB47D6422622A4864B3EB53"
 ```
 2. Hash the secret key, then take the last 32 digits. Use it as your secret key to encrypt your config later on.
-![img.png](img.png)
+![img.png](https://ibb.co/TYXtx8H)
 
    <br />The last 32 digits are **67d81e2c5717548a4ee1bd1e81395746**<br /> 
    Use it to encrypt your signature.<br />
